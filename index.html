@@ -452,8 +452,14 @@ POP.Bubble = function() {
     };
 
     this.render = function() {
+		POP.Draw.circle(this.x, this.y, this.r, '#036');
+		// NEW:  Draw assbutt sprite instead of circle
+		var img = new Image();
+		img.src = 'https://shllybkwrm.github.io/assbutt_square.png';
+		// NOTE:  The image is a square, so this is not properly aligned with the circle 
+		POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
 		
-		if (this.sprite==0){		
+		/*if (this.sprite==0){		
 			POP.Draw.circle(this.x, this.y, this.r, '#036');
 			// NEW:  Draw logo sprite instead of circle
 			var img = new Image();
@@ -471,7 +477,7 @@ POP.Bubble = function() {
 		}
 		else {
 			POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
-		}
+		}*/
 		
     };
 
