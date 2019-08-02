@@ -278,7 +278,7 @@ var POP = {
         // display scores
         POP.Draw.text('Hit: ' + POP.score.hit, 20, 50, 14, '#fff');
         POP.Draw.text('Escaped: ' + POP.score.escaped, 20, 70, 14, '#fff');
-        POP.Draw.text('Accuracy: ' + POP.score.accuracy + '%', 20, 70, 14, '#fff');
+        POP.Draw.text('Accuracy: ' + POP.score.accuracy + '%', 20, 90, 14, '#fff');
 		
 		// display title
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
@@ -434,7 +434,7 @@ POP.Bubble = function() {
     this.render = function() {
 
         POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
-		POP.DrawImage(this.img, this.x, this.y);
+		POP.ctx.DrawImage(this.img, this.x, this.y);
     };
 
 };
