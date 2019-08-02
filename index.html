@@ -44,6 +44,8 @@ var POP = {
     offset: {top: 0, left: 0},
     // store all bubble, touches, particles etc
     entities: [],
+	// NEW:  image sprite storage
+    sprites: [],
     // the amount of game ticks until
     // we spawn a bubble
     nextBubble: 100,
@@ -69,7 +71,7 @@ var POP = {
    
         // the proportion of width to height
         POP.RATIO = POP.WIDTH / POP.HEIGHT;
-        // these will change when the screen is resize
+        // these will change when the screen is resized
         POP.currentWidth = POP.WIDTH;
         POP.currentHeight = POP.HEIGHT;
         // this is our canvas element
@@ -128,6 +130,15 @@ var POP = {
             // as above
             e.preventDefault();
         }, false);
+
+		// NEW:  Import image sprites
+		var img1 = new Image();
+		img1.src = 'gish_round.png';
+		var img2 = new Image();
+		img2.src = 'assbutt_square.png';
+		POP.sprites.push(img1);
+		POP.sprites.push(img2);
+
 
         // we're ready to resize
         POP.resize();
@@ -410,8 +421,8 @@ POP.Bubble = function() {
 	
 	
 	// NEW:  Add sprite image
-	this.img = new Image();
-	this.img.src = 'gish_round.png';
+	this.img = POP.sprites[0];
+	//this.img.src = 'gish_round.png';
 
 
     this.update = function() {
@@ -433,7 +444,7 @@ POP.Bubble = function() {
 
     this.render = function() {
 
-        POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
+        //POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
 		POP.ctx.DrawImage(this.img, this.x, this.y);
     };
 
