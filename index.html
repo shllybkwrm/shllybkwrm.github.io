@@ -13,11 +13,12 @@ canvas { display: block; margin: 0 auto; background: #fff; }
 
 </head>
 
-// NOTE:  For full tutorial, see https://www.smashingmagazine.com/2012/10/design-your-own-mobile-game/ 
-
 <body>
 <canvas></canvas>
 <script>
+
+// NOTE:  For full tutorial, see https://www.smashingmagazine.com/2012/10/design-your-own-mobile-game/ 
+
 
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating
 // shim layer with setTimeout fallback
@@ -294,6 +295,8 @@ var POP = {
 		// display title
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
+		// TEST:  Draw image
+		POP.ctx.DrawImage(POP.sprites[0], 0, 0);		
 
     },
 
@@ -444,7 +447,7 @@ POP.Bubble = function() {
 
     this.render = function() {
 
-        //POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
+        POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
 		POP.ctx.DrawImage(this.img, this.x, this.y);
     };
 
