@@ -15,8 +15,6 @@ canvas { display: block; margin: 0 auto; background: #fff; }
 
 <body>
 
-<img id="gish_round" width="50" height="50" src="gish_round.png" alt="GISH Round">
-
 <canvas></canvas>
 <script>
 
@@ -299,7 +297,7 @@ var POP = {
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
 		// TEST:  Draw image
-		POP.ctx.drawImage(document.getElementsByID("gish_round), 0, 0);
+		POP.ctx.drawImage(POP.img1, 0, 0);
 
     },
 
