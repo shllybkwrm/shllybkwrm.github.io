@@ -14,6 +14,7 @@ canvas { display: block; margin: 0 auto; background: #fff; }
 </head>
 
 <body>
+
 <canvas></canvas>
 <script>
 
@@ -296,7 +297,7 @@ var POP = {
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
 		// TEST:  Draw image
-		POP.ctx.DrawImage(POP.sprites[0], 0, 0);		
+		POP.ctx.drawImage(POP.sprites[0], 0, 0);		
 
     },
 
@@ -448,7 +449,7 @@ POP.Bubble = function() {
     this.render = function() {
 
         POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
-		POP.ctx.DrawImage(this.img, this.x, this.y);
+		POP.ctx.drawImage(this.img, this.x, this.y);
     };
 
 };
