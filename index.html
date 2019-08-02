@@ -134,12 +134,12 @@ var POP = {
         }, false);
 
 		// NEW:  Import image sprites
-		POP.img1 = new Image();
-		img1.src = 'gish_round.png';
-		POP.img2 = new Image();
-		img2.src = 'assbutt_square.png';
-		POP.sprites.push(img1);
-		POP.sprites.push(img2);
+		//POP.img1 = new Image();
+		//img1.src = 'gish_round.png';
+		//POP.img2 = new Image();
+		//img2.src = 'assbutt_square.png';
+		//POP.sprites.push(img1);
+		//POP.sprites.push(img2);
 
 
         // we're ready to resize
@@ -296,8 +296,10 @@ var POP = {
 		// display title
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
-		// TEST:  Draw image
-		//POP.ctx.drawImage(POP.img1, 0, 0);
+		// TEST:  Draw image		
+		var img1 = new Image();
+		img1.src = 'gish_round.png';
+		POP.ctx.drawImage(img1, POP.WIDTH-50-20, 40, 50, 50);
 
     },
 
