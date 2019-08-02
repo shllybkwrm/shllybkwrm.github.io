@@ -15,6 +15,8 @@ canvas { display: block; margin: 0 auto; background: #fff; }
 
 <body>
 
+<img id="gish_round" width="864" height="865" src="gish_round.png" alt="GISH Round">
+
 <canvas></canvas>
 <script>
 
@@ -136,9 +138,9 @@ var POP = {
 		// NEW:  Import image sprites
 		var img1 = new Image();
 		img1.src = 'gish_round.png';
+		POP.sprites.push(img1);
 		var img2 = new Image();
 		img2.src = 'assbutt_square.png';
-		POP.sprites.push(img1);
 		POP.sprites.push(img2);
 
 
@@ -297,7 +299,7 @@ var POP = {
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
 		// TEST:  Draw image
-		POP.ctx.drawImage(POP.sprites[0], 0, 0);		
+		POP.ctx.drawImage(document.getElementsByID("gish_round), 0, 0);
 
     },
 
