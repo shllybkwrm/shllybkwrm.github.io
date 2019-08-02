@@ -297,9 +297,9 @@ var POP = {
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
 		// TEST:  Draw image		
-		var img = new Image();
-		img.src = 'gish_square.png';
-		POP.ctx.drawImage(img, POP.WIDTH-50-20, 40, 50, 50);
+		var logo = new Image();
+		logo.src = 'gish_square.png';
+		POP.ctx.drawImage(logo, POP.WIDTH-50-20, 40, 50, 50);
 
     },
 
@@ -417,7 +417,7 @@ POP.Bubble = function() {
     this.y = POP.HEIGHT + (Math.random() * 100) + 100;
 	
 	// rand for picking sprite
-	this.sprite = Math.floor(Math.random() * 2);
+	//this.sprite = Math.floor(Math.random() * 2);
 
     // the amount by which the bubble
     // will move from side to side
@@ -454,18 +454,18 @@ POP.Bubble = function() {
     this.render = function() {
 		POP.Draw.circle(this.x, this.y, this.r, '#036');
 		// NEW:  Draw assbutt sprite instead of circle
-		var img = new Image();
-		img.src = 'https://shllybkwrm.github.io/assbutt_square.png';
+		var sprite1 = new Image();
+		sprite1.src = 'gish_round.png';
 		// NOTE:  The image is a square, so this is not properly aligned with the circle 
-		POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
+		POP.ctx.drawImage(sprite1, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
 		
 		/*if (this.sprite==0){		
 			POP.Draw.circle(this.x, this.y, this.r, '#036');
 			// NEW:  Draw logo sprite instead of circle
-			var img = new Image();
-			img.src = 'gish_round.png';
+			var sprite0 = new Image();
+			sprite0.src = 'gish_round.png';
 			// NOTE:  The image is a square, so this is not properly aligned with the circle 
-			POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
+			POP.ctx.drawImage(sprite0, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
 		}
 		else if (this.sprite==1){
 			POP.Draw.circle(this.x, this.y, this.r, '#036');
