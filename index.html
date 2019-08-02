@@ -407,6 +407,11 @@ POP.Bubble = function() {
     this.xConstant = this.x;
 
     this.remove = false;
+	
+	
+	// NEW:  Add sprite image
+	this.img = new Image();
+	this.img.src = 'gish_round.png';
 
 
     this.update = function() {
@@ -429,6 +434,7 @@ POP.Bubble = function() {
     this.render = function() {
 
         POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
+		POP.DrawImage(this.img, this.x, this.y);
     };
 
 };
