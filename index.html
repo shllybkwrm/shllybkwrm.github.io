@@ -13,6 +13,8 @@ canvas { display: block; margin: 0 auto; background: #fff; }
 
 </head>
 
+// NOTE:  For full tutorial, see https://www.smashingmagazine.com/2012/10/design-your-own-mobile-game/ 
+
 <body>
 <canvas></canvas>
 <script>
@@ -274,9 +276,13 @@ var POP = {
         }
 
         // display scores
-        POP.Draw.text('Hit: ' + POP.score.hit, 20, 30, 14, '#fff');
-        POP.Draw.text('Escaped: ' + POP.score.escaped, 20, 50, 14, '#fff');
+        POP.Draw.text('Hit: ' + POP.score.hit, 20, 50, 14, '#fff');
+        POP.Draw.text('Escaped: ' + POP.score.escaped, 20, 70, 14, '#fff');
         POP.Draw.text('Accuracy: ' + POP.score.accuracy + '%', 20, 70, 14, '#fff');
+		
+		// display title
+        POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
+		
 
     },
 
