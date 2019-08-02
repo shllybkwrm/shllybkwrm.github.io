@@ -42,7 +42,7 @@ var POP = {
     // store all bubble, touches, particles etc
     entities: [],
 	// NEW:  image sprite storage
-    sprites: [],
+    //sprites: [],
     // the amount of game ticks until
     // we spawn a bubble
     nextBubble: 100,
@@ -123,6 +123,8 @@ var POP = {
             // as above
             e.preventDefault();
         }, false);
+		
+		
 		// NEW:  Import image sprites
 		//POP.img1 = new Image();
 		//img1.src = 'gish_round.png';
@@ -130,6 +132,8 @@ var POP = {
 		//img2.src = 'assbutt_square.png';
 		//POP.sprites.push(img1);
 		//POP.sprites.push(img2);
+		
+		
         // we're ready to resize
         POP.resize();
         POP.loop();
@@ -351,9 +355,6 @@ POP.Bubble = function() {
     this.remove = false;
 	
 	
-	// NEW:  Add sprite image
-	this.img = POP.sprites[0];
-	//this.img.src = 'gish_round.png';
     this.update = function() {
         // a sine wave is commonly a function of time
         var time = new Date().getTime() * 0.002;
@@ -367,11 +368,12 @@ POP.Bubble = function() {
         }
     };
     this.render = function() {
+	
         //POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
         POP.Draw.circle(this.x, this.y, this.r, '#036');
 		// NEW:  Draw sprite instead of circle
 		var img = new Image();
-		img.src = 'https://shllybkwrm.github.io/gish_round.png';
+		img.src = 'gish_round.png';
 		// NOTE:  The image is a square, so this is not properly aligned with the circle 
 		POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
     };
