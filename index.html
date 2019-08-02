@@ -47,7 +47,7 @@ var POP = {
     // store all bubble, touches, particles etc
     entities: [],
 	// NEW:  image sprite storage
-    sprites: [],
+    //sprites: [],
     // the amount of game ticks until
     // we spawn a bubble
     nextBubble: 100,
@@ -297,9 +297,9 @@ var POP = {
         POP.Draw.text('POP GISH!! by Team PaleontoloGishts', 20, 30, 14, '#fff');
 		
 		// TEST:  Draw image		
-		var img1 = new Image();
-		img1.src = 'gish_round.png';
-		POP.ctx.drawImage(img1, POP.WIDTH-50-20, 40, 50, 50);
+		var img = new Image();
+		img.src = 'gish_square.png';
+		POP.ctx.drawImage(img, POP.WIDTH-50-20, 40, 50, 50);
 
     },
 
@@ -415,6 +415,9 @@ POP.Bubble = function() {
  
     this.x = (Math.random() * (POP.WIDTH) - this.r);
     this.y = POP.HEIGHT + (Math.random() * 100) + 100;
+	
+	// rand for picking sprite
+	this.sprite = Math.floor(Math.random() * 2);
 
     // the amount by which the bubble
     // will move from side to side
@@ -449,14 +452,27 @@ POP.Bubble = function() {
     };
 
     this.render = function() {
-
-        //POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
-        POP.Draw.circle(this.x, this.y, this.r, '#036');
-		// NEW:  Draw sprite instead of circle
-		var img = new Image();
-		img.src = '/gish_round.png';
-		// NOTE:  The image is a square, so this is not properly aligned with the circle 
-		POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
+		
+		if (this.sprite==0){		
+			POP.Draw.circle(this.x, this.y, this.r, '#036');
+			// NEW:  Draw logo sprite instead of circle
+			var img = new Image();
+			img.src = 'gish_round.png';
+			// NOTE:  The image is a square, so this is not properly aligned with the circle 
+			POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
+		}
+		else if (this.sprite==1){
+			POP.Draw.circle(this.x, this.y, this.r, '#036');
+			// NEW:  Draw assbutt sprite instead of circle
+			var img = new Image();
+			img.src = 'assbutt_square.png';
+			// NOTE:  The image is a square, so this is not properly aligned with the circle 
+			POP.ctx.drawImage(img, this.x-this.r, this.y-this.r, this.r*2, this.r*2);
+		}
+		else {
+			POP.Draw.circle(this.x, this.y, this.r, 'rgba(255,255,255,1)');
+		}
+		
     };
 
 };
